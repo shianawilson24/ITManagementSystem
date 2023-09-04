@@ -1,0 +1,86 @@
+-- This is the tables I've created for this application along with the data inserted for both tables 
+
+CREATE TABLE employee (
+    userId INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(255),
+    role VARCHAR(50)
+);
+CREATE TABLE task (
+    taskId INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    duedate DATE,
+    priority VARCHAR(50),
+    status VARCHAR(50),
+    userId INT,
+    FOREIGN KEY (userId) REFERENCES employee(userId) -- 'userId' is a foreign key referencing the 'employee' table.
+);
+
+INSERT INTO employee (username, password, email, role)
+VALUES ('john_smith', 'password123', 'john.smith@sswtech.com', 'Software Engineer');
+
+INSERT INTO employee (username, password, email, role)
+VALUES ('emily_johnson', 'securepass456', 'emily.johnson@sswtech.com', 'Data Analyst');
+
+INSERT INTO employee (username, password, email, role)
+VALUES ('michael_davis', 'confidential789', 'michael.davis@sswtech.com', 'Systems Administrator');
+
+INSERT INTO employee (username, password, email, role)
+VALUES ('sarah_williams', 'secretpass123', 'sarah.williams@sswtech.com', 'Quality Assurance Engineer');
+
+INSERT INTO employee (username, password, email, role)
+VALUES ('david_brown', 'strongpass789', 'david.brown@sswtech.com', 'Database Administrator');
+
+INSERT INTO employee (username, password, email, role)
+VALUES ('jessica_martinez', 'hiddenpass567', 'jessica.martinez@sswtech.com', 'UI/UX Designer');
+
+INSERT INTO employee (username, password, email, role)
+VALUES ('kevin_anderson', 'protected123', 'kevin.anderson@sswtech.com', 'Network Engineer');
+
+INSERT INTO employee (username, password, email, role)
+VALUES ('amanda_clark', 'guarded456', 'amanda.clark@sswtech.com', 'DevOps Engineer');
+
+INSERT INTO employee (username, password, email, role)
+VALUES ('christopher_turner', 'classified789', 'christopher.turner@sswtech.com', 'Data Scientist');
+
+INSERT INTO employee (username, password, email, role)
+VALUES ('lauren_hall', 'privatepass123', 'lauren.hall@sswtech.com', 'Cybersecurity Analyst');
+-- Inserting 12 task entries with due dates four days out, excluding weekends
+-- These are sample entries; adjust as needed
+INSERT INTO task (title, description, duedate, priority, status, userId)
+VALUES ('Task 1', 'Description for Task 1', DATE_ADD(CURDATE(), INTERVAL 4 DAY), 'High', 'Pending', 1);
+
+INSERT INTO task (title, description, duedate, priority, status, userId)
+VALUES ('Task 2', 'Description for Task 2', DATE_ADD(CURDATE(), INTERVAL 5 DAY), 'Medium', 'Pending', 2);
+
+INSERT INTO task (title, description, duedate, priority, status, userId)
+VALUES ('Task 3', 'Description for Task 3', DATE_ADD(CURDATE(), INTERVAL 6 DAY), 'High', 'Pending', 3);
+
+INSERT INTO task (title, description, duedate, priority, status, userId)
+VALUES ('Task 4', 'Description for Task 4', DATE_ADD(CURDATE(), INTERVAL 7 DAY), 'Low', 'Pending', 4);
+
+INSERT INTO task (title, description, duedate, priority, status, userId)
+VALUES ('Task 5', 'Description for Task 5', DATE_ADD(CURDATE(), INTERVAL 8 DAY), 'Medium', 'Pending', 5);
+
+INSERT INTO task (title, description, duedate, priority, status, userId)
+VALUES ('Task 6', 'Description for Task 6', DATE_ADD(CURDATE(), INTERVAL 9 DAY), 'High', 'Pending', 6);
+
+INSERT INTO task (title, description, duedate, priority, status, userId)
+VALUES ('Task 7', 'Description for Task 7', DATE_ADD(CURDATE(), INTERVAL 10 DAY), 'Low', 'Pending', 7);
+
+INSERT INTO task (title, description, duedate, priority, status, userId)
+VALUES ('Task 8', 'Description for Task 8', DATE_ADD(CURDATE(), INTERVAL 11 DAY), 'Medium', 'Pending', 8);
+
+INSERT INTO task (title, description, duedate, priority, status, userId)
+VALUES ('Task 9', 'Description for Task 9', DATE_ADD(CURDATE(), INTERVAL 12 DAY), 'High', 'Pending', 9);
+
+INSERT INTO task (title, description, duedate, priority, status, userId)
+VALUES ('Task 10', 'Description for Task 10', DATE_ADD(CURDATE(), INTERVAL 13 DAY), 'Low', 'Pending', 10);
+
+INSERT INTO task (title, description, duedate, priority, status, userId)
+VALUES ('Task 11', 'Description for Task 11', DATE_ADD(CURDATE(), INTERVAL 14 DAY), 'Medium', 'Pending', 1);
+
+INSERT INTO task (title, description, duedate, priority, status, userId)
+VALUES ('Task 12', 'Description for Task 12', DATE_ADD(CURDATE(), INTERVAL 15 DAY), 'High', 'Pending', 2);
