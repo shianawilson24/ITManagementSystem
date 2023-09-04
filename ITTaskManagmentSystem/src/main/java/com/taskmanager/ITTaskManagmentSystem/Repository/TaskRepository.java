@@ -19,7 +19,7 @@ import jakarta.websocket.server.PathParam;
 
 @Repository(value = "taskRepository")
 public interface TaskRepository extends JpaRepository<Task, Integer>{
-	@Query(value = "select * from task where userId= :userId", nativeQuery = true)
+	@Query(value = "select * from task where userId= :userId", nativeQuery = true) 
 	public List<Task> getAllTaskFromUser(@Param("userId") Integer userId);
 	@Query(value = "select * from task", nativeQuery = true)
 	public List<Task> getAllTask(Task task);
