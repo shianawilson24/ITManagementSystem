@@ -1,4 +1,4 @@
-# ITManagementSystem (Currenlty still being developed)
+# ITManagementSystem (Still being developed)
 Project Overview:  
 I've been actively developing an IT management application, a solution that streamlines various IT operations and tasks efficiently. This application is built using Java Spring, serverless cloud capabilities with Postman, and a robust database foundation involving MySQL, JDBC, Spring JPA, Hibernate ORM, and REST API integration. (I designed and created the database myself you can view the sql script in the application.properties folder)
 
